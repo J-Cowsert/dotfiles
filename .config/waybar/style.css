@@ -1,0 +1,52 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.0;
+}
+
+#clock {
+    background-color: transparent;
+    padding: 0 10px;
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+#clock:hover {
+    
+    background-color: #56545f;
+    transition: background-color 0.3s ease;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #ffffff;
+    background-color: transparent;
+}
+#workspaces button.active {
+    background-color: #64727d;
+    border-bottom: 3px solid #ffffff;
+}
+#workspaces button.urgent {
+    background-color: #6472ff;
+}
+
+#custom-vpn.connected {
+    color: #00ff87; /* green */
+}
+#custom-vpn.disconnected {
+    color: #ff5555; /* red */
+}
+#custom-vpn.unknown {
+    color: #ffaa00; /* orange */
+}
+
