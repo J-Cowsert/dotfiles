@@ -7,3 +7,4 @@
 ## Misc 
 - `ncdu` - Interactive Disk Usage analyser
 - `shopt` - Shell options
+- `jobs -l  ->  fg [job-id]` - Running jobs stopped with <ctl-z>
