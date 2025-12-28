@@ -5,6 +5,7 @@
 - `yay -Rns $(yay -Qdtq)` - # Remove all orphans + unneeded deps
 
 ## Misc 
-- `ncdu` - Interactive Disk Usage analyser
-- `shopt` - Shell options
-- `jobs -l  ->  fg [job-id]` - Running jobs stopped with <ctl-z>
+- `ncdu` - Interactive Drive Usage analyser
+- `jobs -l  ->  fg [job-id]` - Running Jobs Stopped With <ctl-z>
+- `smartctl -a` - Monitor Drive Health
+- `sudo iotop -oPa` - Monitor Drive Read/Writes Live
