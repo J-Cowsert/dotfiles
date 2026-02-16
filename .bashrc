@@ -36,3 +36,8 @@ shopt -s histappend
 shopt -s cdspell
 shopt -s dirspell
 
+export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+export PATH=/home/dex/.opencode/bin:$PATH
+export PATH="$HOME/.npm-global/bin:$PATH"
