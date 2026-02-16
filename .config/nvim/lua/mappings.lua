@@ -10,9 +10,23 @@ map("i", "jk", "<ESC>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 map("n", "\\", ":NvimTreeToggle<CR>", { desc = "Toggle file tree" })
-
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 map("n", "<F4>", "<cmd>ClangdSwitchSourceHeader<CR>", { desc = "Switch between .h & .cpp" })
 
+map('n', 'x', '_x')
 
 vim.keymap.del("n", "<Tab>")
+
+-- Move lines up/down with Alt+arrows / Alt+j/k
+map("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up" })
+map("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
+map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+map("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up" })
+map("i", "<A-Down>", "<Esc>:m .+1<CR>==gi", { desc = "Move line down" })
+map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up" })
+map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "Move line down" })
+map("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+map("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
