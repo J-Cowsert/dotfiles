@@ -23,10 +23,14 @@
 - `cmake -B build -DCMAKE_BUILD_TYPE=Release` - # Configure : generates build files
 - `cmake --build build --target clean` - # Clean
 
+- `cmake --list-presets`
+- `cmake --preset <preset>` - Configure (creates/updates preset)
+- `cmake --build --preset <preset>` - Build preset
+
 ## perf
-- `perf stat ./<program>` - #  Run program and print hardware counter totals: cycles, instructions, branch misses, cache misses, context switches
+- `perf stat ./<program>` - Run program and print hardware counter totals: cycles, instructions, branch misses, cache misses, context switches
     ### flags
-    - `-e` - # Choose specific counters to monitor 
+    - `-e` - Choose specific counters to monitor 
     - `-r [count]` - # Run certain number of times and report mean and stddev for counters
 - `perf list` - Show all counters the CPU supports
 - `perf record -g ./<program>` - # Sample the program as it runs — periodically snapshot the instruction pointer and call stack. -g captures call stacks so you can trace HOW you got to a hot function
