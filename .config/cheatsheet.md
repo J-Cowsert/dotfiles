@@ -11,6 +11,8 @@
 ## nvim
 - `gcc` - comment out a line
 - `:%s/<current>/<new>` - find and replace current with new
+- `<C-o>` & `<C-i>` - Navigate Jump List
+- `<C-t>` & `<C-]>` - Navigate Tag Stack
 
 ## git
 - `git switch -c` - # Create new branch
