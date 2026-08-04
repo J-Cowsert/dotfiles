@@ -13,7 +13,11 @@ map("n", "\\", ":NvimTreeToggle<CR>", { desc = "Toggle file tree" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 map("n", "<F4>", "<cmd>ClangdSwitchSourceHeader<CR>", { desc = "Switch between .h & .cpp" })
 
-map('n', 'x', '_x')
+-- Use black hole register for deletes (don't pollute clipboard)
+map("n", "x", '"_x', { desc = "Delete char (no clipboard)" })
+map("n", "dd", '"_dd', { desc = "Delete line (no clipboard)" })
+
+
 
 vim.keymap.del("n", "<Tab>")
 

@@ -17,11 +17,31 @@ return {
 -- { import = "nvchad.blink.lazyspec" },
 
   {
+    "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
+  },
+
+  {
+    "folke/snacks.nvim",
+    lazy = false,
+    opts = {
+      indent = {
+        char = "│",
+        animate = {
+          enabled = false,
+        },
+        scope = {
+          char = "│",
+        },
+      },
+    },
+  },
+
+  {
   	"nvim-treesitter/nvim-treesitter",
   	opts = {
   		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css"
+  			"vim", "lua", "vimdoc", "asm"
   		},
   	},
   },
@@ -38,6 +58,16 @@ return {
     end,
   },
 
+
+  {
+    dir = "~/dev/classlayout.nvim",
+    ft = { "cpp", "c" },
+    config = function()
+      require("classlayout").setup({
+        keymap = "<leader>cl",
+      })
+    end,
+  },
 
   {
     "ThePrimeagen/harpoon",

@@ -1,6 +1,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", }
+local servers = {"asm_lsp"}
 
 local lspconfig = require "lspconfig"
 local on_attach = require("nvchad.configs.lspconfig").on_attach
@@ -12,7 +12,7 @@ lspconfig.clangd.setup {
   cmd = {
     "clangd",
     "--header-insertion=never",
-    "--completion-style=detailed",
+    "--completion-style=bundled",
     "--clang-tidy",
     "--background-index",
     "--compile-commands-dir=.",  -- look in current project root
