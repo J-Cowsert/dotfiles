@@ -1,8 +1,10 @@
 # My Command Cheatsheet
 
 ## Package Management (yay/pacman)
-- `yay -Rns <package>` — Remove package and unneeded dependencies  
-- `yay -Rns $(yay -Qdtq)` - # Remove all orphans + unneeded deps
+- `yay -Rns <package>` - Remove package and unneeded dependencies  
+- `yay -Rns $(yay -Qdtq)` - Remove all orphans + unneeded deps
+- `pacman -Qs <package>` - Search locally installed packages 
+- `pacman -Qi <package>` - View info for local package 
 
 ## systemd
 - `systemctl list-units --type=service` - See everything currently running
@@ -18,9 +20,14 @@
 - `git switch -c` - # Create new branch
 
 ## gdb
--``
+- `gdb -tui [executable]` - launch into TUI mode
+- `<C-x> 2` - cycle through layouts
+
+- `starti` - start at first assembly instruction
+- `si` - step forward one assembly instruction
 
 ## cmake
+- `cmake -S . -B build`
 - `cmake --build build -j$(nproc)` - # Build every target in the project
 - `cmake -B build -DCMAKE_BUILD_TYPE=Release` - # Configure : generates build files
 - `cmake --build build --target clean` - # Clean
@@ -37,6 +44,12 @@
 - `perf list` - Show all counters the CPU supports
 - `perf record -g ./<program>` - # Sample the program as it runs — periodically snapshot the instruction pointer and call stack. -g captures call stacks so you can trace HOW you got to a hot function
 - `perf report` - Open interactive TUI
+
+## PlatformIO cli
+
+- `pio home`
+- `pio run -t compiledb`
+- `pio run -t upload`
 
 ## Misc 
 - `ncdu` - Interactive Drive Usage analyser
