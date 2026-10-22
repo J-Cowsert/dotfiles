@@ -1,13 +1,10 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = {"asm_lsp"}
+local servers = { "asm_lsp", "clangd" }
 
-local lspconfig = require "lspconfig"
-local on_attach = require("nvchad.configs.lspconfig").on_attach
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-lspconfig.clangd.setup {
-  on_attach = on_attach,
+vim.lsp.config("clangd", {
   capabilities = capabilities,
   cmd = {
     "clangd",
@@ -20,7 +17,7 @@ lspconfig.clangd.setup {
   init_options = {
     clangdFileStatus = true, -- optional: shows file processing status
   }
-}
+})
 
 vim.lsp.enable(servers)
 

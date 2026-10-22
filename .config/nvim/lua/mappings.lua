@@ -11,7 +11,7 @@ map("i", "jk", "<ESC>")
 
 map("n", "\\", ":NvimTreeToggle<CR>", { desc = "Toggle file tree" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
-map("n", "<F4>", "<cmd>ClangdSwitchSourceHeader<CR>", { desc = "Switch between .h & .cpp" })
+map("n", "<F4>", "<cmd>LspClangdSwitchSourceHeader<CR>", { desc = "Switch between .h & .cpp" })
 
 -- Use black hole register for deletes (don't pollute clipboard)
 map("n", "x", '"_x', { desc = "Delete char (no clipboard)" })
@@ -19,7 +19,9 @@ map("n", "dd", '"_dd', { desc = "Delete line (no clipboard)" })
 
 
 
-vim.keymap.del("n", "<Tab>")
+if vim.fn.maparg("<Tab>", "n") ~= "" then
+  vim.keymap.del("n", "<Tab>")
+end
 
 -- Move lines up/down with Alt+arrows / Alt+j/k
 map("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up" })
